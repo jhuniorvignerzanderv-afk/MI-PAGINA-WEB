@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure Ejecutivo | Jhunior Vargas Gordon - Consultoría Empresarial y Gestión Pública</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1F3A;
+            --navy-dark: #071527;
+            --gold: #C89D28;
+            --gold-light: #FDF8EA;
+            --silver: #F4F6F9;
+            --text: #0F172A;
+            --muted: #475569;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #E2E8F0;
+            color: var(--text);
+            padding: 32px 16px;
+            line-height: 1.5;
+        }
+        .toolbar {
+            max-width: 840px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--navy-dark);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 12px;
+        }
+        .toolbar a, .toolbar button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+        }
+        .btn-back {
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+        }
+        .btn-print {
+            background: var(--gold);
+            color: var(--navy-dark);
+        }
+        .sheet {
+            max-width: 840px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(7, 21, 39, 0.18);
+        }
+        .sheet-header {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: #fff;
+            padding: 36px 40px;
+            display: grid;
+            grid-template-columns: 115px 1fr;
+            gap: 24px;
+            align-items: center;
+            border-bottom: 4px solid var(--gold);
+        }
+        .avatar-box {
+            width: 115px;
+            height: 115px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+        }
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 35% 18%;
+        }
+        .badge-top {
+            display: inline-block;
+            background: rgba(200, 157, 40, 0.2);
+            color: #DFB544;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .sheet-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.55rem;
+            margin-bottom: 4px;
+        }
+        .sheet-header p {
+            color: #CBD5E1;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .contact-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.84rem;
+            color: #DFB544;
+            font-weight: 600;
+        }
+        .sheet-body {
+            padding: 32px 40px;
+        }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--navy);
+            border-left: 4px solid var(--gold);
+            padding-left: 10px;
+            margin-bottom: 12px;
+        }
+        .summary-box {
+            background: var(--silver);
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .service-item {
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+        .service-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .service-item p {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+        .photos-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .photos-strip img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #CBD5E1;
+        }
+        .credentials-footer {
+            background: var(--gold-light);
+            border: 1px solid rgba(200, 157, 40, 0.4);
+            border-radius: 10px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .toolbar {
+                display: none;
+            }
+            .sheet {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+        @media (max-width: 640px) {
+            .sheet-header, .grid-2, .photos-strip {
+                grid-template-columns: 1fr;
+            }
+            .credentials-footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <a href="index.html" class="btn-back">← Volver a la Página Web</a>
+        <button onclick="window.print()" class="btn-print">🖨️ Imprimir / Guardar en PDF</button>
+    </div>
+
+    <main class="sheet">
+        <header class="sheet-header">
+            <div class="avatar-box">
+                <img src="IMG_20251016_112207.jpg" alt="Jhunior Vigner Zander Vargas Gordon">
+            </div>
+            <div>
+                <span class="badge-top">Brochure Ejecutivo de Consultoría</span>
+                <h1>Jhunior Vigner Zander Vargas Gordon</h1>
+                <p>Doctorando en Administración de Empresas · Magíster en Gestión Pública · Lic. Adm. Colegiado (C.L.A. 46020)</p>
+                <div class="contact-strip">
+                    <span>📞 Cel / WhatsApp: 916645528</span>
+                    <span>✉️ jhuniorvignerzanderv@gmail.com</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="sheet-body">
+            <h2 class="section-title">Perfil Ejecutivo</h2>
+            <div class="summary-box">
+                Más de <strong>4 años de experiencia</strong> articulando el sector financiero (<strong>Agrobanco, Caja Piura</strong>), la empresa privada, proyectos de desarrollo productivo (<strong>AgroRural, FONCODES - Haku Wiñay</strong>) y la gestión pública municipal. Especialista en estructuración de financiamiento, licitaciones con el Estado (OSCE), formalización empresarial/cooperativa y optimización de procesos.
+            </div>
+
+            <h2 class="section-title">Líneas de Consultoría Especializada</h2>
+            <div class="grid-2">
+                <div class="service-item">
+                    <h3>01. Contrataciones del Estado (OSCE)</h3>
+                    <p>Inscripción en RNP, análisis de bases SEACE, formulación de consultas y estructuración de ofertas ganadoras.</p>
+                </div>
+                <div class="service-item">
+                    <h3>02. Evaluación Financiera y Riesgo Crediticio</h3>
+                    <p>Flujos de caja proyectados, punto de equilibrio, análisis de capacidad de pago y armado de expedientes de crédito.</p>
+                </div>
+                <div class="service-item">
+                    <h3>03. Cooperativas Agrarias y Proyectos Rurales</h3>
+                    <p>Gobernanza asociativa, planes de negocio (Procompite, Agroideas, FONCODES, AgroRural) y formalización SUNAT.</p>
+                </div>
+                <div class="service-item">
+                    <h3>04. Gestión del Riesgo de Desastres (CENEPRED)</h3>
+                    <p>Planes de prevención y reducción del riesgo de desastres, informes EVAR y cumplimiento normativo SINAGERD.</p>
+                </div>
+                <div class="service-item" style="grid-column: span 2;">
+                    <h3>05. Logística, Abastecimiento y Optimización de Procesos</h3>
+                    <p>Diagramas de flujo productivo, Buenas Prácticas de Manufactura (BPM), gestión de compras y control de inventarios en entidades públicas y empresas privadas.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Evidencia de Intervenciones en Campo y Gabinete</h2>
+            <div class="photos-strip">
+                <img src="FB_IMG_1771880232293.jpg" alt="Capacitación en Procesos de Selección">
+                <img src="IMG-20241130-WA0138.jpg" alt="Taller de Flujo de Caja Mensual">
+                <img src="IMG-20250129-WA0011.jpg" alt="Articulación con Municipalidad y AgroRural">
+            </div>
+
+            <div class="credentials-footer">
+                <div>
+                    <strong>¡1.ª Orientación 100% Gratuita y Consultas desde S/ 50!</strong> Evaluamos tu caso para programar una <strong>consulta puntual</strong>, <strong>visita técnica in situ</strong> o <strong>asesoría integral</strong>.
+                </div>
+                <div>
+                    <strong>Agenda hoy:</strong> 916645528 | C.L.A. 46020
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
